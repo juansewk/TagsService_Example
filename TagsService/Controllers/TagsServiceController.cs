@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.TagHelpers;
+using TagsService.Models;
 
 namespace TagsService.Controllers
 {
@@ -11,7 +13,10 @@ namespace TagsService.Controllers
         [HttpGet]
         public IActionResult GetStatusService()
         {
+            TagModel tagModel = new TagModel();
+
             return Ok("ALGO ESTÁ BIEN");
+
         }
 
     
