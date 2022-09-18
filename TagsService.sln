@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagsService", "TagsService\TagsService.csproj", "{2D8B8E44-F572-4564-8A3F-D07CA1A7E6B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagsService.Models", "TagsService.Models\TagsService.Models.csproj", "{72E42360-D6E1-4BE1-B817-D0A5ACC7F67A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagsService.Models", "TagsService.Models\TagsService.Models.csproj", "{72E42360-D6E1-4BE1-B817-D0A5ACC7F67A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagsService.DataAccess", "TagsService.DataAccess\TagsService.DataAccess.csproj", "{0ACED8F4-1759-4702-B425-613AD2533BC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{72E42360-D6E1-4BE1-B817-D0A5ACC7F67A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72E42360-D6E1-4BE1-B817-D0A5ACC7F67A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72E42360-D6E1-4BE1-B817-D0A5ACC7F67A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ACED8F4-1759-4702-B425-613AD2533BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ACED8F4-1759-4702-B425-613AD2533BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ACED8F4-1759-4702-B425-613AD2533BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ACED8F4-1759-4702-B425-613AD2533BC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
