@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TagsService.Business\TagsService.Business.csproj" />
     <ProjectReference Include="..\TagsService.Models\TagsService.Models.csproj" />
   </ItemGroup>
 

@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TagsService.DataAccess\TagsService.DataAccess.csproj" />
+    <ProjectReference Include="..\TagsService.DataContext\TagsService.DataContext.csproj" />
+    <ProjectReference Include="..\TagsService.Models\TagsService.Models.csproj" />
+  </ItemGroup>
+
 </Project>
