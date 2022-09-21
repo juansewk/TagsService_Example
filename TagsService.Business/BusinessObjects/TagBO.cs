@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TagsService.DataAccess.DA
+namespace TagsService.Business.BusinessObjects
 {
-    internal class TagDA
+    internal class TagBO
     {
+
     }
 }

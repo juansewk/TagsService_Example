@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TagsService.DataContext.Context
 {
-    internal class TagsServiceContext
+    public class TagsServiceContext
     {
+
     }
 }
