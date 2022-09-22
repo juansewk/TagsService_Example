@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using TagsService.DataContext.Context;
+
 namespace TagsService
 {
     public class Program
@@ -13,7 +16,20 @@ namespace TagsService
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            // Get string connection
+            builder.Services.AddDbContext<TagsServiceContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("TagsServiceConnection"))
+            );
+
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var dataContext = scope.ServiceProvider.GetRequiredService<TagsServiceContext>();
+                dataContext.Database.Migrate();
+
+                // $PM: Add-Migration [Name migration]
+            }
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
