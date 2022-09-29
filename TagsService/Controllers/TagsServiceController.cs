@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using TagsService.Business.BusinessObjects;
+using TagsService.Business.Interfaces;
+using TagsService.DataContext.Context;
 using TagsService.Models;
 
 namespace TagsService.Controllers
@@ -8,6 +11,15 @@ namespace TagsService.Controllers
     [Route("api/v1/tags")]
     public class TagsServiceController : Controller
     {
+        private readonly ITagBO _tagBO;
+        private static TagsServiceContext Context;
+
+        public TagsServiceController(TagsServiceContext _context, ITagBO tagBO)
+        {
+            _tagBO = tagBO;
+            Context = _context;
+        }
+
         [HttpGet]
         [Route("GetStatus")]
         public IActionResult GetStatusService()
@@ -19,7 +31,8 @@ namespace TagsService.Controllers
         [Route("GetAll")]
         public IActionResult GetAll()
         {
-            return Ok("Get all tags OK.");
+            TagBO tagBO = (TagBO)_tagBO.GetAll();
+            return new ObjectResult(tagBO);
         }
 
         [HttpGet]

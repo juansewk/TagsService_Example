@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using TagsService.Business.BusinessObjects;
+using TagsService.Business.Interfaces;
 using TagsService.DataContext.Context;
 
 namespace TagsService
@@ -12,9 +14,13 @@ namespace TagsService
             // Add services to the container.
 
             builder.Services.AddControllers();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            // Depence inyection
+            builder.Services.AddTransient<ITagBO, TagBO>();
 
             // Get string connection
             builder.Services.AddDbContext<TagsServiceContext>(options =>
@@ -41,7 +47,6 @@ namespace TagsService
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
