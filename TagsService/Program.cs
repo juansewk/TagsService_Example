@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using TagsService.Business.BusinessObjects;
 using TagsService.Business.Interfaces;
@@ -19,13 +20,23 @@ namespace TagsService
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            // Depence inyection
+            // Depence inyection (Interfaces in controllers)
             builder.Services.AddTransient<ITagBO, TagBO>();
 
             // Get string connection
             builder.Services.AddDbContext<TagsServiceContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("TagsServiceConnection"))
             );
+
+            // Mapper
+            var mapperConfig = new MapperConfiguration(m =>
+            {
+                m.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            builder.Services.AddSingleton(mapper);
+            builder.Services.AddMvc();
 
             var app = builder.Build();
 

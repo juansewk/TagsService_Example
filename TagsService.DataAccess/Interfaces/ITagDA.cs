@@ -8,7 +8,7 @@ using TagsService.Models.DataModels;
 namespace TagsService.DataAccess.Interfaces
 {
     public interface ITagDA
-    {
+    {   
         IQueryable<TagModel> GetAll();
         TagModel GetById(int id);
         TagModel Add(TagModel tagModel);

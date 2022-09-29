@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using TagsService.Business.BusinessObjects;
 using TagsService.Business.Interfaces;
@@ -13,10 +14,12 @@ namespace TagsService.Controllers
     {
         private readonly ITagBO _tagBO;
         private static TagsServiceContext Context;
+        private readonly IMapper _mapper;
 
-        public TagsServiceController(TagsServiceContext _context, ITagBO tagBO)
+        public TagsServiceController(TagsServiceContext _context, ITagBO tagBO, IMapper mapper)
         {
             _tagBO = tagBO;
+            _mapper = mapper;
             Context = _context;
         }
 
@@ -31,8 +34,8 @@ namespace TagsService.Controllers
         [Route("GetAll")]
         public IActionResult GetAll()
         {
-            TagBO tagBO = (TagBO)_tagBO.GetAll();
-            return new ObjectResult(tagBO);
+            ITagBO tagBO = _tagBO;
+            return Ok(tagBO.GetAll());
         }
 
         [HttpGet]
@@ -42,7 +45,7 @@ namespace TagsService.Controllers
             return Ok("Get by id OK.");
         }
 
-        [HttpPost] 
+        [HttpPost]
         [Route("Add")]
         public IActionResult Add()
         {
@@ -62,9 +65,5 @@ namespace TagsService.Controllers
         {
             return Ok("Enable or disable OK.");
         }
-
-
-
-
     }
 }

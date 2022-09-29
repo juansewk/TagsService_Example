@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,20 @@ namespace TagsService.Business.BusinessObjects
     public class TagBO : ITagBO
     {
         private static TagsServiceContext Context;
+        private readonly IMapper _mapper;
 
-        public TagBO(TagsServiceContext _context)
+        public TagBO(TagsServiceContext _context, IMapper mapper)
         {
             Context = _context;
+            _mapper = mapper;
         }
 
-        public IQueryable<TagBE> GetAll()
+        public List<TagBE> GetAll()
         {
             TagDA tagDA = new TagDA(Context);
-            return (IQueryable<TagBE>)tagDA.GetAll();
+            var dataResult = tagDA.GetAll().ToList();
+
+            return _mapper.Map<List<TagBE>>(dataResult);
         }
 
         public TagBE GetById(int id)

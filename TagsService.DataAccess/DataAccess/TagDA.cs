@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TagsService.DataAccess.Interfaces;
 using TagsService.DataContext.Context;
+using TagsService.Models.BusinessEntities;
 using TagsService.Models.DataModels;
 
 namespace TagsService.DataAccess.DataAccess
@@ -20,9 +22,9 @@ namespace TagsService.DataAccess.DataAccess
 
         public IQueryable<TagModel> GetAll()
         {
-            var a = Context.Tag.ToList();
+            IQueryable<TagModel> result = Context.Set<TagModel>().AsNoTracking();
 
-            return (IQueryable<TagModel>)a;
+            return result;
         }
 
         public TagModel GetById(int id)
@@ -44,5 +46,7 @@ namespace TagsService.DataAccess.DataAccess
         {
             throw new NotImplementedException();
         }
+
     }
 }
+;

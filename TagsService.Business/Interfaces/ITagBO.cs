@@ -10,7 +10,7 @@ namespace TagsService.Business.Interfaces
 {
     public interface ITagBO
     {
-        IQueryable<TagBE> GetAll();
+        List<TagBE> GetAll();
         TagBE GetById(int id);
         TagBE Add(TagBE tagBE);
         TagBE Update(TagBE tagBE);
