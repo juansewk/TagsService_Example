@@ -27,9 +27,11 @@ namespace TagsService.DataAccess.DataAccess
             return result;
         }
 
-        public TagModel GetById(int id)
+        public TagModel GetById(int Id)
         {
-            throw new NotImplementedException();
+            var result = Context.Set<TagModel>().Find(Id);
+
+            return result;
         }
 
         public TagModel Add(TagModel tagModel)

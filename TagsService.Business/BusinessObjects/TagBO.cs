@@ -30,9 +30,12 @@ namespace TagsService.Business.BusinessObjects
             return _mapper.Map<List<TagBE>>(dataResult);
         }
 
-        public TagBE GetById(int id)
+        public TagBE GetById(int Id)
         {
-            throw new NotImplementedException();
+            TagDA tagDA = new TagDA(Context);
+            var dataResult = tagDA.GetById(Id);
+
+            return _mapper.Map<TagBE>(dataResult);
         }
 
         public TagBE Add(TagBE tag)

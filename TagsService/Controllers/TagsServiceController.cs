@@ -40,9 +40,10 @@ namespace TagsService.Controllers
 
         [HttpGet]
         [Route("GetById")]
-        public IActionResult GetById()
+        public IActionResult GetById(int Id)
         {
-            return Ok("Get by id OK.");
+            ITagBO tagBO = _tagBO;
+            return Ok(tagBO.GetById(Id));
         }
 
         [HttpPost]
