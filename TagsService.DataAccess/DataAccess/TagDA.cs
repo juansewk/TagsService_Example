@@ -49,9 +49,12 @@ namespace TagsService.DataAccess.DataAccess
 
         public TagModel EnableOrDisable(TagModel tagModel)
         {
-            throw new NotImplementedException();
+            tagModel.IsActive = !tagModel.IsActive;
+
+            Context.Entry(tagModel).State = EntityState.Modified;
+            Context.SaveChanges();
+            return tagModel;
         }
 
     }
 }
-;

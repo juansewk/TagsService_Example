@@ -58,7 +58,10 @@ namespace TagsService.Business.BusinessObjects
 
         public TagBE EnableOrDisable(TagBE tag)
         {
-            throw new NotImplementedException();
+            TagDA tagDA = new TagDA(Context);
+            var obj = _mapper.Map<TagModel>(tag);
+
+            return _mapper.Map<TagBE>(tagDA.EnableOrDisable(obj));
         }
     }
 }

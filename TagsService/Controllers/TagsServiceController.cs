@@ -67,7 +67,8 @@ namespace TagsService.Controllers
         [Route("EnableOrDisable")]
         public IActionResult EnableOrDisable([FromBody] TagBE tagBE)
         {
-            return Ok("Enable or disable OK.");
+            ITagBO tagBO = _tagBO;
+            return new ObjectResult(_tagBO.EnableOrDisable(tagBE));
         }
     }
 }
