@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TagsService.Business.Interfaces;
 using TagsService.DataAccess.DataAccess;
+using TagsService.DataAccess.Interfaces;
 using TagsService.DataContext.Context;
 using TagsService.Models.BusinessEntities;
 using TagsService.Models.DataModels;
@@ -49,7 +50,10 @@ namespace TagsService.Business.BusinessObjects
 
         public TagBE Update(TagBE tag)
         {
-            throw new NotImplementedException();
+            TagDA tagDA = new TagDA(Context);
+            var obj = _mapper.Map<TagModel>(tag);
+
+            return _mapper.Map<TagBE>(tagDA.Update(obj));
         }
 
         public TagBE EnableOrDisable(TagBE tag)

@@ -52,22 +52,20 @@ namespace TagsService.Controllers
         public IActionResult Add([FromBody] TagBE tagBE)
         {
             ITagBO tagBO = _tagBO;
-            var loquesea = _tagBO.Add(tagBE);
-
-
-            return new ObjectResult(loquesea);
+            return new ObjectResult(_tagBO.Add(tagBE));
         }
 
         [HttpPut]
         [Route("Update")]
-        public IActionResult Update()
+        public IActionResult Update([FromBody] TagBE tagBE)
         {
-            return Ok("Udate OK.");
+            ITagBO tagBO = _tagBO;
+            return new ObjectResult(_tagBO.Update(tagBE));
         }
 
         [HttpPut]
         [Route("EnableOrDisable")]
-        public IActionResult EnableOrDisable()
+        public IActionResult EnableOrDisable([FromBody] TagBE tagBE)
         {
             return Ok("Enable or disable OK.");
         }

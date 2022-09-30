@@ -42,7 +42,9 @@ namespace TagsService.DataAccess.DataAccess
 
         public TagModel Update(TagModel tagModel)
         {
-            throw new NotImplementedException();
+            Context.Entry(tagModel).State = EntityState.Modified;
+            Context.SaveChanges();
+            return tagModel;
         }
 
         public TagModel EnableOrDisable(TagModel tagModel)
