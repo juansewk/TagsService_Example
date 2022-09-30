@@ -22,7 +22,6 @@ namespace TagsService.Models.DataModels
 
         public string? Image { get; set; }
 
-        [MaxLength(1)]
         public bool? IsActive { get; set; }
 
         public DateTime? CreatedAt { get; set; }

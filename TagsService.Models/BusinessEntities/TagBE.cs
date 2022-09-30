@@ -20,7 +20,6 @@ namespace TagsService.Models.BusinessEntities
 
         public string? Image { get; set; }
 
-        [MaxLength(1)]
         public bool? IsActive { get; set; }
     }
 }

@@ -29,14 +29,15 @@ namespace TagsService.DataAccess.DataAccess
 
         public TagModel GetById(int Id)
         {
-            var result = Context.Set<TagModel>().Find(Id);
-
-            return result;
+            return Context.Set<TagModel>().Find(Id);
         }
 
         public TagModel Add(TagModel tagModel)
         {
-            throw new NotImplementedException();
+            Context.Set<TagModel>().Add(tagModel);
+            Context.SaveChanges();
+
+            return tagModel;
         }
 
         public TagModel Update(TagModel tagModel)

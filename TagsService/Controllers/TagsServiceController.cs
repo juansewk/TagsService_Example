@@ -5,6 +5,7 @@ using TagsService.Business.BusinessObjects;
 using TagsService.Business.Interfaces;
 using TagsService.DataContext.Context;
 using TagsService.Models;
+using TagsService.Models.BusinessEntities;
 
 namespace TagsService.Controllers
 {
@@ -48,9 +49,13 @@ namespace TagsService.Controllers
 
         [HttpPost]
         [Route("Add")]
-        public IActionResult Add()
+        public IActionResult Add([FromBody] TagBE tagBE)
         {
-            return Ok("Add OK.");
+            ITagBO tagBO = _tagBO;
+            var loquesea = _tagBO.Add(tagBE);
+
+
+            return new ObjectResult(loquesea);
         }
 
         [HttpPut]
