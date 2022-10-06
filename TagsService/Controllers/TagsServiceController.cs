@@ -15,12 +15,11 @@ namespace TagsService.Controllers
     {
         private readonly ITagBO _tagBO;
         private static TagsServiceContext Context;
-        private readonly IMapper _mapper;
 
-        public TagsServiceController(TagsServiceContext _context, ITagBO tagBO, IMapper mapper)
+
+        public TagsServiceController(TagsServiceContext _context, ITagBO tagBO)
         {
             _tagBO = tagBO;
-            _mapper = mapper;
             Context = _context;
         }
 
