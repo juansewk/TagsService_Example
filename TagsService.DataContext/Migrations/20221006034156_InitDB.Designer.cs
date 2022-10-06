@@ -12,8 +12,8 @@ using TagsService.DataContext.Context;
 namespace TagsService.DataContext.Migrations
 {
     [DbContext(typeof(TagsServiceContext))]
-    [Migration("20221006024800_Init")]
-    partial class Init
+    [Migration("20221006034156_InitDB")]
+    partial class InitDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,7 +56,30 @@ namespace TagsService.DataContext.Migrations
 
                     b.HasIndex("TagModelId");
 
-                    b.ToTable("SubTagModel");
+                    b.ToTable("SubTag");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IsActive = true,
+                            Name = "SubTag example 1 - tag 1",
+                            TagId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            IsActive = true,
+                            Name = "SubTag example 2 - tag 1",
+                            TagId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            IsActive = true,
+                            Name = "SubTag example 3 - tag 1",
+                            TagId = 1
+                        });
                 });
 
             modelBuilder.Entity("TagsService.Models.DataModels.TagModel", b =>
@@ -95,6 +118,48 @@ namespace TagsService.DataContext.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tag");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Desciption example 1...",
+                            HexColor = "#1B999B",
+                            IsActive = true,
+                            Name = "Tag example 1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Desciption example 2...",
+                            HexColor = "#ED217C",
+                            IsActive = true,
+                            Name = "Tag example 2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Desciption example 3...",
+                            HexColor = "#55DDFF",
+                            IsActive = true,
+                            Name = "Tag example 3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Desciption example 4...",
+                            HexColor = "#FFFD82",
+                            IsActive = true,
+                            Name = "Tag example 4"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Desciption example 5...",
+                            HexColor = "#FF9B71",
+                            IsActive = true,
+                            Name = "Tag example 5"
+                        });
                 });
 
             modelBuilder.Entity("TagsService.Models.DataModels.SubTagModel", b =>
