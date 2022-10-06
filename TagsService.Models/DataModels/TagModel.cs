@@ -24,7 +24,7 @@ namespace TagsService.Models.DataModels
 
         public bool? IsActive { get; set; }
 
-        public List<SubTagModel> SubTags { get; set; }
+        public ICollection<SubTagModel>? SubTags { get; set; }
 
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }

@@ -22,7 +22,7 @@ namespace TagsService.Models.BusinessEntities
 
         public bool? IsActive { get; set; }
 
-        public List<SubTagBE> subTags { get; set; }
+        public ICollection<SubTagBE>? subTags { get; set; }
 
     }
 }
