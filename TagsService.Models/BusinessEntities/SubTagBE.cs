@@ -2,7 +2,7 @@
 
 namespace TagsService.Models.BusinessEntities
 {
-    public class TagBE
+    public class SubTagBE
     {
         [Key]
         [Required]
@@ -12,17 +12,8 @@ namespace TagsService.Models.BusinessEntities
         [MaxLength(50)]
         public string? Name { get; set; }
 
-        [MaxLength(250)]
-        public string? Description { get; set; }
-
-        [MaxLength(10)]
-        public string? HexColor { get; set; }
-
-        public string? Image { get; set; }
+        public int? TagId { get; set; }
 
         public bool? IsActive { get; set; }
-
-        public List<SubTagBE> subTags { get; set; }
-
     }
 }

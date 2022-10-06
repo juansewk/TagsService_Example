@@ -10,6 +10,11 @@ namespace TagsService
         {
             CreateMap<TagModel, TagBE>();
             CreateMap<TagBE, TagModel>();
+
+            CreateMap<SubTagBE, SubTagModel>();
+            CreateMap<SubTagModel, SubTagBE>();
+
+
         }
     }
 }

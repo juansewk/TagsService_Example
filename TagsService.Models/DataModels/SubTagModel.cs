@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace TagsService.Models.DataModels
 {
-    public class TagModel
+    public class SubTagModel
     {
         [Key]
         [Required]
@@ -14,18 +14,9 @@ namespace TagsService.Models.DataModels
         [MaxLength(100)]
         public string? Name { get; set; }
 
-        [MaxLength(250)]
-        public string? Description { get; set; }
-
-        [MaxLength(10)]
-        public string? HexColor { get; set; }
-
-        public string? Image { get; set; }
-
         public bool? IsActive { get; set; }
 
-        public List<SubTagModel> SubTags { get; set; }
-
+        public int TagId { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
     }
