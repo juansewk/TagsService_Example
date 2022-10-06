@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagsService.DataContext", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagsService.Business", "TagsService.Business\TagsService.Business.csproj", "{1BC34DCD-26FB-4C34-AEC7-9C8F15ACFB26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagsService.Tests", "TagsService.Tests\TagsService.Tests.csproj", "{DE531DC8-DC34-4D39-AAC0-2EE80A399283}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1BC34DCD-26FB-4C34-AEC7-9C8F15ACFB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC34DCD-26FB-4C34-AEC7-9C8F15ACFB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC34DCD-26FB-4C34-AEC7-9C8F15ACFB26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE531DC8-DC34-4D39-AAC0-2EE80A399283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE531DC8-DC34-4D39-AAC0-2EE80A399283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE531DC8-DC34-4D39-AAC0-2EE80A399283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE531DC8-DC34-4D39-AAC0-2EE80A399283}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

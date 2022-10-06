@@ -16,7 +16,6 @@ namespace TagsService.Controllers
         private readonly ITagBO _tagBO;
         private static TagsServiceContext Context;
 
-
         public TagsServiceController(TagsServiceContext _context, ITagBO tagBO)
         {
             _tagBO = tagBO;
