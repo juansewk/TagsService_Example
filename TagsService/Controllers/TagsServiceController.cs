@@ -35,23 +35,20 @@ namespace TagsService.Controllers
         [Route("GetAll")]
         public IActionResult GetAll()
         {
-            ITagBO tagBO = _tagBO;
-            return Ok(tagBO.GetAll());
+            return Ok(_tagBO.GetAll());
         }
 
         [HttpGet]
         [Route("GetById")]
         public IActionResult GetById(int Id)
         {
-            ITagBO tagBO = _tagBO;
-            return Ok(tagBO.GetById(Id));
+            return Ok(_tagBO.GetById(Id));
         }
 
         [HttpPost]
         [Route("Add")]
         public IActionResult Add([FromBody] TagBE tagBE)
         {
-            ITagBO tagBO = _tagBO;
             return new ObjectResult(_tagBO.Add(tagBE));
         }
 
@@ -59,7 +56,6 @@ namespace TagsService.Controllers
         [Route("Update")]
         public IActionResult Update([FromBody] TagBE tagBE)
         {
-            ITagBO tagBO = _tagBO;
             return new ObjectResult(_tagBO.Update(tagBE));
         }
 
@@ -67,7 +63,6 @@ namespace TagsService.Controllers
         [Route("EnableOrDisable")]
         public IActionResult EnableOrDisable([FromBody] TagBE tagBE)
         {
-            ITagBO tagBO = _tagBO;
             return new ObjectResult(_tagBO.EnableOrDisable(tagBE));
         }
     }
