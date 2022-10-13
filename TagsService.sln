@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagsService.DataContext", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagsService.Business", "TagsService.Business\TagsService.Business.csproj", "{1BC34DCD-26FB-4C34-AEC7-9C8F15ACFB26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagsService.Tests", "TagsService.Tests\TagsService.Tests.csproj", "{DE531DC8-DC34-4D39-AAC0-2EE80A399283}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagsService.Tests", "TagsService.Tests\TagsService.Tests.csproj", "{DE531DC8-DC34-4D39-AAC0-2EE80A399283}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
